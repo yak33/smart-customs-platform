@@ -69,6 +69,26 @@ export const generatedRoutes: GeneratedRoute[] = [
     ]
   },
   {
+    name: 'dictionary',
+    path: '/dictionary',
+    component: 'layout.base',
+    meta: {
+      title: 'dictionary',
+      i18nKey: 'route.dictionary'
+    },
+    children: [
+      {
+        name: 'dictionary_cnports',
+        path: '/dictionary/cnports',
+        component: 'view.dictionary_cnports',
+        meta: {
+          title: 'dictionary_cnports',
+          i18nKey: 'route.dictionary_cnports'
+        }
+      }
+    ]
+  },
+  {
     name: 'home',
     path: '/home',
     component: 'layout.base$view.home',

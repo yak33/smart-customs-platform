@@ -173,6 +173,8 @@ const routeMap: RouteMap = {
   "demo": "/demo",
   "demo_demo": "/demo/demo",
   "demo_tree": "/demo/tree",
+  "dictionary": "/dictionary",
+  "dictionary_cnports": "/dictionary/cnports",
   "home": "/home",
   "iframe-page": "/iframe-page/:url",
   "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",

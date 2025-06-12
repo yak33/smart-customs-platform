@@ -24,6 +24,7 @@ export const views: Record<LastLevelRouteKey, RouteComponent | (() => Promise<Ro
   "user-center": () => import("@/views/_builtin/user-center/index.vue"),
   demo_demo: () => import("@/views/demo/demo/index.vue"),
   demo_tree: () => import("@/views/demo/tree/index.vue"),
+  dictionary_cnports: () => import("@/views/dictionary/cnports/index.vue"),
   home: () => import("@/views/home/index.vue"),
   monitor_cache: () => import("@/views/monitor/cache/index.vue"),
   monitor_logininfor: () => import("@/views/monitor/logininfor/index.vue"),
