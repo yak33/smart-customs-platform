@@ -1,13 +1,10 @@
 <script setup lang="tsx">
-import { ref } from 'vue';
-import type { Ref } from 'vue';
 import { NButton, NCard, NDataTable, NPopconfirm, NTag } from 'naive-ui';
-import { useBoolean, useLoading } from '@sa/hooks';
 import {
-  fetchGetCnportsList,
-  fetchDeleteCnports,
   fetchBatchDeleteCnports,
-  fetchExportCnports
+  fetchDeleteCnports,
+  fetchExportCnports,
+  fetchGetCnportsList
 } from '@/service/api/dictionary/cnports';
 import { useAppStore } from '@/store/modules/app';
 import { useTable, useTableOperate } from '@/hooks/common/table';
@@ -162,15 +159,8 @@ const {
   ]
 });
 
-const {
-  drawerVisible,
-  operateType,
-  editingData,
-  handleAdd,
-  handleEdit,
-  checkedRowKeys,
-  onBatchDeleted
-} = useTableOperate(data, getData);
+const { drawerVisible, operateType, editingData, handleAdd, handleEdit, checkedRowKeys, onBatchDeleted } =
+  useTableOperate(data, getData);
 
 async function handleBatchDelete() {
   const { error } = await fetchBatchDeleteCnports(checkedRowKeys.value);
@@ -202,7 +192,7 @@ function handleReset() {
 <template>
   <div class="h-full flex-col-stretch gap-12px overflow-hidden lt-sm:overflow-auto">
     <CnportsSearch v-model:model="searchParams" @reset="handleReset" @search="getDataByPage" />
-    <NCard :title="'口岸管理'" :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
+    <NCard title="口岸管理" :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
       <template #header-extra>
         <TableHeaderOperation
           v-model:columns="columnChecks"
