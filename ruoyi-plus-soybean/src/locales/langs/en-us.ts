@@ -66,6 +66,8 @@ const local: App.I18n.Schema = {
       yes: 'Yes',
       no: 'No'
     },
+    enable: 'Enable',
+    disable: 'Disable',
     second: 'Second',
     selected: 'selected',
     anyRecords: 'records',

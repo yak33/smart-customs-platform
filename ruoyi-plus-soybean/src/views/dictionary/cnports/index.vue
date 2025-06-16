@@ -58,7 +58,7 @@ const {
     },
     {
       key: 'portCode',
-      title: '口岸代码',
+      title: '口岸编码',
       align: 'center',
       minWidth: 100
     },
@@ -70,47 +70,13 @@ const {
     },
     {
       key: 'portNameEn',
-      title: '英文名称',
+      title: '口岸英文名称',
       align: 'center',
       minWidth: 150
     },
     {
-      key: 'portType',
-      title: '口岸类型',
-      align: 'center',
-      width: 100,
-      render: row => {
-        const typeMap: Record<string, { label: string; type: NaiveUI.ThemeColor }> = {
-          '1': { label: '海港', type: 'primary' },
-          '2': { label: '空港', type: 'info' },
-          '3': { label: '陆港', type: 'warning' },
-          '4': { label: '邮路口岸', type: 'error' }
-        };
-        const type = typeMap[row.portType];
-        return type ? <NTag type={type.type}>{type.label}</NTag> : <span>{row.portType}</span>;
-      }
-    },
-    {
-      key: 'customsName',
-      title: '所属海关',
-      align: 'center',
-      minWidth: 120
-    },
-    {
-      key: 'provinceName',
-      title: '省份',
-      align: 'center',
-      width: 100
-    },
-    {
-      key: 'cityName',
-      title: '城市',
-      align: 'center',
-      width: 100
-    },
-    {
       key: 'status',
-      title: $t('common.status'),
+      title: '状态',
       align: 'center',
       width: 100,
       render: row => {
@@ -122,12 +88,6 @@ const {
         const label = status ? $t('common.enable') : $t('common.disable');
         return <NTag type={tagType}>{label}</NTag>;
       }
-    },
-    {
-      key: 'sort',
-      title: '排序',
-      align: 'center',
-      width: 80
     },
     {
       key: 'operate',

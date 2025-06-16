@@ -66,6 +66,8 @@ const local: App.I18n.Schema = {
       yes: '是',
       no: '否'
     },
+    enable: '启用',
+    disable: '禁用',
     second: '秒',
     selected: '已选择',
     anyRecords: '条记录',

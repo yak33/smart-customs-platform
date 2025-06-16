@@ -379,6 +379,8 @@ declare namespace App {
           yes: string;
           no: string;
         };
+        enable: string;
+        disable: string;
         second: string;
         selected: string;
         anyRecords: string;
