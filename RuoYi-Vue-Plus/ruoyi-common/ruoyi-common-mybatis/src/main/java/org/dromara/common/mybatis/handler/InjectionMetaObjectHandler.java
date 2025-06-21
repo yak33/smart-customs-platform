@@ -13,6 +13,8 @@ import org.dromara.common.satoken.utils.LoginHelper;
 
 import java.util.Date;
 
+import static cn.hutool.core.text.CharSequenceUtil.isNotBlank;
+
 /**
  * MP注入处理器
  *
@@ -40,10 +42,11 @@ public class InjectionMetaObjectHandler implements MetaObjectHandler {
                 if (ObjectUtil.isNull(baseEntity.getCreateBy())) {
                     LoginUser loginUser = getLoginUser();
                     if (ObjectUtil.isNotNull(loginUser)) {
-                        Long userId = loginUser.getUserId();
+//                        Long userId = loginUser.getUserId();
+                        String username = loginUser.getUsername();
                         // 填充创建人、更新人和创建部门信息
-                        baseEntity.setCreateBy(userId);
-                        baseEntity.setUpdateBy(userId);
+                        baseEntity.setCreateBy(username);
+                        baseEntity.setUpdateBy(username);
                         baseEntity.setCreateDept(ObjectUtils.notNull(baseEntity.getCreateDept(), loginUser.getDeptId()));
                     }
                 }
@@ -71,9 +74,10 @@ public class InjectionMetaObjectHandler implements MetaObjectHandler {
                 baseEntity.setUpdateTime(current);
 
                 // 获取当前登录用户的ID，并填充更新人信息
-                Long userId = LoginHelper.getUserId();
-                if (ObjectUtil.isNotNull(userId)) {
-                    baseEntity.setUpdateBy(userId);
+//                Long userId = LoginHelper.getUserId();
+                String username = LoginHelper.getUsername();
+                if (isNotBlank(username)) {
+                    baseEntity.setUpdateBy(username);
                 }
             } else {
                 this.strictUpdateFill(metaObject, "updateTime", Date.class, new Date());

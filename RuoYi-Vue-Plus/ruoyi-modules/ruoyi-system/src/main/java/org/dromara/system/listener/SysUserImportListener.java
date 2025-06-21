@@ -39,6 +39,7 @@ public class SysUserImportListener extends AnalysisEventListener<SysUserImportVo
     private final Boolean isUpdateSupport;
 
     private final Long operUserId;
+    private final String operUsername;
 
     private int successNum = 0;
     private int failureNum = 0;
@@ -51,6 +52,7 @@ public class SysUserImportListener extends AnalysisEventListener<SysUserImportVo
         this.password = BCrypt.hashpw(initPassword);
         this.isUpdateSupport = isUpdateSupport;
         this.operUserId = LoginHelper.getUserId();
+        this.operUsername = LoginHelper.getUsername();
     }
 
     @Override
@@ -62,7 +64,7 @@ public class SysUserImportListener extends AnalysisEventListener<SysUserImportVo
                 SysUserBo user = BeanUtil.toBean(userVo, SysUserBo.class);
                 ValidatorUtils.validate(user);
                 user.setPassword(password);
-                user.setCreateBy(operUserId);
+                user.setCreateBy(operUsername);
                 userService.insertUser(user);
                 successNum++;
                 successMsg.append("<br/>").append(successNum).append("、账号 ").append(user.getUserName()).append(" 导入成功");
@@ -73,7 +75,7 @@ public class SysUserImportListener extends AnalysisEventListener<SysUserImportVo
                 ValidatorUtils.validate(user);
                 userService.checkUserAllowed(user.getUserId());
                 userService.checkUserDataScope(user.getUserId());
-                user.setUpdateBy(operUserId);
+                user.setUpdateBy(operUsername);
                 userService.updateUser(user);
                 successNum++;
                 successMsg.append("<br/>").append(successNum).append("、账号 ").append(user.getUserName()).append(" 更新成功");

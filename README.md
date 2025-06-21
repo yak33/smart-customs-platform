@@ -5,24 +5,60 @@
   <p>基于 <a href="https://gitee.com/dromara/RuoYi-Vue-Plus" target="_blank">RuoYi-Vue-Plus</a> 的后端能力和 <a href="https://gitee.com/xlsea/ruoyi-plus-soybean" target="_blank">Soybean Admin</a> 前端特性构建的现代化智慧关务平台</p>
 </div>
 
-<div style="height: 10px; clear: both;"></div>
+---
 
-## 项目介绍
+[![RuoYi-Vue-Plus](https://img.shields.io/badge/RuoYi_Vue_Plus-5.4.0-success.svg)](https://gitee.com/dromara/RuoYi-Vue-Plus)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4-blue.svg)]()
+[![Vue3](https://img.shields.io/badge/Vue-3.5.x-green.svg)]()
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.x-blue.svg)]()
+[![JDK-21](https://img.shields.io/badge/JDK-21-green.svg)]()
 
-智慧关务平台是一套现代化、高效的关务管理系统，致力于简化和优化海关监管、通关和贸易流程。本平台采用前后端分离的架构，基于强大的 RuoYi-Vue-Plus 框架开发，为关务提供全方位的数字化解决方案。
+## 项目概述
 
-### 平台定位
+智慧关务平台是一套企业级的关务管理系统，专注于海关监管、通关和贸易流程的数字化转型。该平台采用现代化的技术架构，通过前后端分离设计，为关务业务提供高效、安全、可扩展的解决方案。
 
-- **行业解决方案**：面向海关和进出口企业的专业化解决方案
-- **降本增效工具**：通过数字化手段大幅提升通关效率，降低合规成本
-- **风险管控平台**：结合大数据分析，实现智能风险识别与管控
+### 🎯 平台定位
 
-### 目录结构
+- **专业化解决方案**：面向海关、进出口企业和物流公司的专业平台
+- **数字化转型工具**：通过智能化手段大幅提升通关效率，降低合规成本
+- **风险管控中心**：结合大数据分析，实现智能风险识别与预警
+- **多租户架构**：支持不同企业、部门的独立管理和数据隔离
 
-本项目包含以下主要组件：
+### 📁 项目结构
 
-- **RuoYi-Vue-Plus**: 后端服务，基于 Spring Boot 框架开发
-- **ruoyi-plus-soybean**: 前端界面，基于 Vue3 和 Soybean Admin 框架开发
+```
+smart-customs-platform/
+├── README.md                 # 项目说明文档
+├── .gitignore               # Git 忽略配置
+├── logs/                    # 日志文件目录
+├── target/                  # 构建输出目录
+├── RuoYi-Vue-Plus/         # 后端服务（Spring Boot）
+│   ├── ruoyi-admin/        # 主应用模块
+│   ├── ruoyi-common/       # 通用组件模块
+│   ├── ruoyi-extend/       # 扩展功能模块
+│   ├── ruoyi-modules/      # 业务功能模块
+│   │   ├── ruoyi-system/   # 系统管理模块
+│   │   ├── ruoyi-business/ # 关务业务模块
+│   │   ├── ruoyi-generator/# 代码生成器
+│   │   ├── ruoyi-job/      # 定时任务模块
+│   │   ├── ruoyi-demo/     # 演示模块
+│   │   └── ruoyi-workflow/ # 工作流模块
+│   ├── script/             # 部署脚本和SQL
+│   │   ├── sql/           # 数据库脚本
+│   │   ├── docker/        # Docker配置
+│   │   ├── bin/           # 启动脚本
+│   │   └── leave/         # 工作流示例
+│   └── pom.xml            # Maven配置
+└── ruoyi-plus-soybean/     # 前端应用（Vue3 + TypeScript）
+    ├── src/               # 源代码目录
+    ├── packages/          # 包管理
+    ├── build/             # 构建配置
+    ├── docs/              # 文档
+    ├── public/            # 静态资源
+    ├── node_modules/      # 依赖包
+    ├── package.json       # 项目配置
+    └── pnpm-lock.yaml     # 锁定文件
+```
 
 ## 核心价值
 

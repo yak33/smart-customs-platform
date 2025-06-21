@@ -81,6 +81,12 @@
             <artifactId>ruoyi-generator</artifactId>
         </dependency>
 
+        <!-- 业务模块 -->
+        <dependency>
+            <groupId>org.dromara</groupId>
+            <artifactId>ruoyi-business</artifactId>
+        </dependency>
+
         <!--  demo模块  -->
         <dependency>
             <groupId>org.dromara</groupId>

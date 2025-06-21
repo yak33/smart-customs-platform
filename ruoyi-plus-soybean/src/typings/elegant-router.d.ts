@@ -24,11 +24,11 @@ declare module "@elegant-router/types" {
     "403": "/403";
     "404": "/404";
     "500": "/500";
+    "business": "/business";
+    "business_china-ports": "/business/china-ports";
     "demo": "/demo";
     "demo_demo": "/demo/demo";
     "demo_tree": "/demo/tree";
-    "dictionary": "/dictionary";
-    "dictionary_cnports": "/dictionary/cnports";
     "home": "/home";
     "iframe-page": "/iframe-page/:url";
     "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?";
@@ -93,8 +93,8 @@ declare module "@elegant-router/types" {
     | "403"
     | "404"
     | "500"
+    | "business"
     | "demo"
-    | "dictionary"
     | "home"
     | "iframe-page"
     | "login"
@@ -127,9 +127,9 @@ declare module "@elegant-router/types" {
     | "login"
     | "social-callback"
     | "user-center"
+    | "business_china-ports"
     | "demo_demo"
     | "demo_tree"
-    | "dictionary_cnports"
     | "home"
     | "monitor_cache"
     | "monitor_logininfor"

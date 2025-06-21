@@ -66,8 +66,6 @@ const local: App.I18n.Schema = {
       yes: 'Yes',
       no: 'No'
     },
-    enable: 'Enable',
-    disable: 'Disable',
     second: 'Second',
     selected: 'selected',
     anyRecords: 'records',
@@ -231,8 +229,6 @@ const local: App.I18n.Schema = {
     demo: 'Demo',
     demo_demo: 'Demo Table',
     demo_tree: 'Demo Tree',
-    dictionary: 'Dictionary',
-    dictionary_cnports: 'Port Management',
     exception: 'Exception',
     exception_403: '403',
     exception_404: '404',

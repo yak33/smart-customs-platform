@@ -40,6 +40,26 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
+    name: 'business',
+    path: '/business',
+    component: 'layout.base',
+    meta: {
+      title: 'business',
+      i18nKey: 'route.business'
+    },
+    children: [
+      {
+        name: 'business_china-ports',
+        path: '/business/china-ports',
+        component: 'view.business_china-ports',
+        meta: {
+          title: 'business_china-ports',
+          i18nKey: 'route.business_china-ports'
+        }
+      }
+    ]
+  },
+  {
     name: 'demo',
     path: '/demo',
     component: 'layout.base',
@@ -64,26 +84,6 @@ export const generatedRoutes: GeneratedRoute[] = [
         meta: {
           title: 'demo_tree',
           i18nKey: 'route.demo_tree'
-        }
-      }
-    ]
-  },
-  {
-    name: 'dictionary',
-    path: '/dictionary',
-    component: 'layout.base',
-    meta: {
-      title: 'dictionary',
-      i18nKey: 'route.dictionary'
-    },
-    children: [
-      {
-        name: 'dictionary_cnports',
-        path: '/dictionary/cnports',
-        component: 'view.dictionary_cnports',
-        meta: {
-          title: 'dictionary_cnports',
-          i18nKey: 'route.dictionary_cnports'
         }
       }
     ]
