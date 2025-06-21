@@ -1,3 +1,10 @@
+<!--
+ * @Author: ZHANGCHAO
+ * @Date: 2025-06-21 00:29:53
+ * @LastEditors: ZHANGCHAO
+ * @LastEditTime: 2025-06-22 01:21:17
+ * @FilePath: \smart-customs-platform\ruoyi-plus-soybean\src\views\business\china-ports\modules\china-ports-search.vue
+-->
 <script setup lang="ts">
 import { useNaiveForm } from '@/hooks/common/form';
 import { $t } from '@/locales';
@@ -36,13 +43,13 @@ async function search() {
         <NForm ref="formRef" :model="model" label-placement="left" :label-width="80">
           <NGrid responsive="screen" item-responsive>
             <NFormItemGi span="24 s:12 m:6" label="口岸编码" path="chinaPortCode" class="pr-24px">
-              <NInput v-model:value="model.chinaPortCode" placeholder="口岸编码" />
+              <NInput v-model:value="model.chinaPortCode" placeholder="口岸编码" @keyup.enter="search" />
             </NFormItemGi>
             <NFormItemGi span="24 s:12 m:6" label="口岸名称" path="name" class="pr-24px">
-              <NInput v-model:value="model.name" placeholder="请输入口岸名称" />
+              <NInput v-model:value="model.name" placeholder="请输入口岸名称" @keyup.enter="search" />
             </NFormItemGi>
             <NFormItemGi span="24 s:12 m:6" label="口岸英文名称" path="enname" class="pr-24px">
-              <NInput v-model:value="model.enname" placeholder="请输入口岸英文名称" />
+              <NInput v-model:value="model.enname" placeholder="请输入口岸英文名称" @keyup.enter="search" />
             </NFormItemGi>
             <NFormItemGi span="24" class="pr-24px">
               <NSpace class="w-full" justify="end">

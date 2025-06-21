@@ -1,5 +1,6 @@
 package org.dromara.business.service.impl;
 
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.mybatis.core.page.TableDataInfo;
@@ -19,6 +20,8 @@ import org.dromara.business.service.IErpChinaPortsService;
 import java.util.List;
 import java.util.Map;
 import java.util.Collection;
+
+import static cn.hutool.core.util.ObjectUtil.isEmpty;
 
 /**
  * 口岸信息Service业务层处理
@@ -74,7 +77,7 @@ public class ErpChinaPortsServiceImpl implements IErpChinaPortsService {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ErpChinaPorts> lqw = Wrappers.lambdaQuery();
         lqw.orderByAsc(ErpChinaPorts::getId);
-        lqw.eq(StringUtils.isNotBlank(bo.getChinaPortCode()), ErpChinaPorts::getChinaPortCode, bo.getChinaPortCode());
+        lqw.like(StringUtils.isNotBlank(bo.getChinaPortCode()), ErpChinaPorts::getChinaPortCode, bo.getChinaPortCode());
         lqw.like(StringUtils.isNotBlank(bo.getName()), ErpChinaPorts::getName, bo.getName());
         lqw.like(StringUtils.isNotBlank(bo.getEnname()), ErpChinaPorts::getEnname, bo.getEnname());
         return lqw;
@@ -115,6 +118,9 @@ public class ErpChinaPortsServiceImpl implements IErpChinaPortsService {
      */
     private void validEntityBeforeSave(ErpChinaPorts entity){
         //TODO 做一些数据校验,如唯一约束
+        if (isEmpty(entity)) {
+            throw new RuntimeException("数据不能为空！");
+        }
     }
 
     /**

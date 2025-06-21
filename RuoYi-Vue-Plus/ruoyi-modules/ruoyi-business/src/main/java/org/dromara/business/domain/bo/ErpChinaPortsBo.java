@@ -23,23 +23,23 @@ public class ErpChinaPortsBo extends BaseEntity {
     /**
      * ID
      */
-    @NotBlank(message = "ID不能为空", groups = { AddGroup.class, EditGroup.class })
+//    @NotBlank(message = "ID不能为空", groups = { AddGroup.class, EditGroup.class })
     private String id;
 
     /**
-     * 出境口岸/国内口岸编码
+     * 口岸编码
      */
-    @NotBlank(message = "出境口岸/国内口岸编码不能为空", groups = { AddGroup.class, EditGroup.class })
+    @NotBlank(message = "口岸编码不能为空", groups = { AddGroup.class, EditGroup.class })
     private String chinaPortCode;
 
     /**
-     * 出境口岸/国内口岸名称
+     * 口岸名称
      */
-    @NotBlank(message = "出境口岸/国内口岸名称不能为空", groups = { AddGroup.class, EditGroup.class })
+    @NotBlank(message = "口岸名称不能为空", groups = { AddGroup.class, EditGroup.class })
     private String name;
 
     /**
-     * 出境口岸/国内口岸英文名称
+     * 口岸英文名称
      */
     private String enname;
 
